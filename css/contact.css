@@ -1,0 +1,108 @@
+/* --- FORMULARIO PROFESIONAL --- */
+
+.form-section {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-bg-main);
+}
+
+.form-container {
+    background-color: var(--color-secondary);
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: var(--color-text-light);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    color: var(--color-white);
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 0.8rem;
+    background-color: #1A1B22;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    color: var(--color-text-light);
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    opacity: 0.6;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px rgba(77, 100, 141, 0.5);
+}
+
+.contact-form select {
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--color-accent);
+    border: none;
+    color: var(--color-white);
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-text-light);
+    color: var(--color-bg-main);
+    border-color: var(--color-accent);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 2.5rem 1.6rem;
+    }
+
+    .form-title {
+        font-size: 1.7rem;
+    }
+}
+
+
