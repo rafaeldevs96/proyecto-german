@@ -1,0 +1,110 @@
+/* ================================================= */
+/* === SECCIÓN DE SERVICIOS (CONTENIDO INTERNO) ==== */
+/* ================================================= */
+
+.services-hero {
+    padding: 120px 20px 80px;
+    background-color: var(--color-bg-main);
+    text-align: center;
+}
+
+.service-detail {
+    padding: 100px 20px;
+    background-color: var(--color-bg-main);
+}
+
+/* Color alternado para separar visualmente los servicios */
+.service-detail:nth-child(even) {
+    background-color: var(--color-secondary);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (min-width: 900px) {
+    .detail-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.service-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-accent);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.detail-content h2 {
+    font-size: 2.5rem;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.detail-content p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.service-list {
+    list-style: none;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.service-list i {
+    color: var(--color-accent);
+    font-size: 1.3rem;
+}
+
+/* Contenedores de imagen/visual */
+.visual-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: var(--color-secondary);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste de color para el placeholder en secciones oscuras */
+.service-detail.reverse .visual-placeholder {
+    background-color: var(--color-bg-main);
+}
+
+.visual-placeholder i {
+    font-size: 8rem;
+    color: var(--color-accent);
+    opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+    .service-detail.reverse .detail-visual {
+        order: 2; /* En móvil, la imagen siempre baja para que el texto sea lo primero */
+    }
+}
+
+
+
+
+
