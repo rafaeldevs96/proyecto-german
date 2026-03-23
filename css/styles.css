@@ -1,12 +1,52 @@
-/* 1. Definimos las variables de colores  */
-:root {
-  --color-bg-main: #1E1F26;      /* Midnight Blue (Fondo principal) */
-  --color-secondary: #283655;    /* Indigo Ink (Secciones secundarias/Tarjetas) */
-  --color-accent: #4D648D;       /* Blueberry (Detalles/Hover) */
-  --color-text-light: #D0E1F9;   /* Periwinkle (Texto principal) */
-  --color-white: #FFFFFF;        /* Blanco puro para títulos importantes */
+
+
+/* Importación de fuentes oficiales */
+@font-face {
+    font-family: 'HeadlineOne';
+    src: url('/fonts/HeadlineOneHPLHS.woff2') format('woff2');
+    font-weight: normal;
 }
 
+@font-face {
+    font-family: 'CodeBold';
+    src: url('/fonts/CodeBold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'TTInterphases';
+    src: url('/fonts/TTInterphasesPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+
+:root {
+  /* --- COLORES PRINCIPALES --- */
+  
+  /* Azul Oxford (Oxfort Blue): Úsalo para el fondo principal de la página */
+  /* Reemplaza a --color-bg-main anterior */
+  --color-bg-main: #283655; 
+
+  /* Azul Real (Royal Azure): Ideal para detalles, iconos y estados hover */
+  /* Mantiene el nombre --color-accent para que no rompa tus estilos actuales */
+  --color-accent: #4D648D;
+
+  /* Naranja Suave (Soft Orange): Perfecto para botones y elementos que deben resaltar */
+  --color-highlight: #F1AE4E;
+
+  /* Amarillo Grisáceo Claro (Light Grayish Yellow): Úsalo para fondos de tarjetas o secciones */
+  --color-secondary: #F1EFDF;
+
+  /* --- COLORES DE TEXTO --- */
+  
+  /* Periwinkle/Gris muy claro para texto sobre fondos oscuros */
+  --color-text-light: #F1EFDF; 
+  
+  /* Azul Oxford oscuro para texto que vaya sobre fondos claros (como las tarjetas) */
+  --color-text-dark: #283655;
+
+  /* Blanco puro para títulos de máximo impacto */
+  --color-white: #FFFFFF;
+}
 
 * {
   margin: 0;
@@ -42,6 +82,38 @@ input, button, textarea, select {
   font: inherit;
 }
 
+h1, .hero-title {
+    font-family: 'HeadlineOne', sans-serif;
+    text-transform: uppercase; /* Esto fuerza las mayúsculas como en la imagen */
+    letter-spacing: 1px; /* Para darle ese aire de diseño editorial */
+}
+
+/* --- Estilos Globales de Texto --- */
+
+body, p, span, li, input, textarea, select {
+    font-family: 'TTInterphases', sans-serif; /* Texto informativo */
+    letter-spacing: 0.5px;
+}
+
+/* Títulos Principales (Hero, About Us Main Title) */
+h1, .main-title, .footer-logo {
+    font-family: 'HeadlineOne', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Títulos Secundarios (Tarjetas, Secciones de Servicios) */
+h2, h3, .mv-card h2, .detail-content h2, .job-header h3 {
+    font-family: 'CodeBold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Títulos de menor jerarquía y Badges */
+h4, .job-badge, .btn-submit, .btn-job-apply {
+    font-family: 'CodeBold', sans-serif;
+    font-weight: bold;
+}
 
 
 /* --- ESTILOS DE LA NAVBAR --- */
@@ -50,41 +122,52 @@ input, button, textarea, select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-bg-main); /* #1E1F26 */
-    padding: 1rem 2rem;
-    position: sticky; 
+    background-color: var(--color-bg-main);
+    /* Reducimos el padding vertical para que la barra no sea tan gruesa */
+    padding: 0.5rem 2rem; 
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    /* Asegura una altura mínima estilizada */
+    min-height: 70px; 
 }
-
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-white);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: 1px;
+    height: auto;
 }
 
-.logo .highlight {
-    color: var(--color-accent); /* #4D648D */
+/* Ajuste de la imagen del logo corregido */
+.logo-img {
+    /* 200px era demasiado; 55px es ideal para este tipo de navbars */
+    height: 110px; 
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
 }
 
+.logo-img:hover {
+    transform: scale(1.05);
+}
 
 .nav-menu {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 2rem; /* Espacio entre items */
+    gap: 2rem;
 }
 
 .nav-link {
-    color: var(--color-text-light); /* #D0E1F9 */
+    color: var(--color-text-light);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
     font-size: 1rem;
+    /* Alineación óptica con el centro del logo */
+    line-height: 1; 
 }
 
 .nav-link:hover {
@@ -93,19 +176,21 @@ input, button, textarea, select {
 
 
 .btn-contact {
-    background-color: var(--color-secondary); /* #283655 */
-    padding: 0.5rem 1.2rem;
-    border-radius: 4px;
-    border: 1px solid var(--color-accent);
+    background-color: var(--color-highlight);
+    color: var(--color-text-light);
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .btn-contact:hover {
-    background-color: var(--color-text-light);
+    background-color: var(--color-white);
     color: var(--color-bg-main);
-    font-weight: bold;
+    transform: translateY(-2px);
 }
-
 
 .hamburger {
     display: none;
@@ -177,12 +262,18 @@ input, button, textarea, select {
 
 /* --- ESTILOS DEL FOOTER --- */
 
+
+/* ================================================= */
+/* --- FOOTER UNIFICADO (SIN PUNTOS Y COLORES) --- */
+/* ================================================= */
+
 .footer {
-    /* Usamos el segundo color más oscuro para diferenciarlo del body */
-    background-color: var(--color-secondary); /* #283655 */
-    color: var(--color-text-light);
+    /* Fondo principal: Oxfort Blue */
+    background-color: #283655; 
+    /* Texto principal: Light Grayish Yellow */
+    color: #F1EFDF;
     padding-top: 4rem;
-    margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+    margin-top: auto; 
 }
 
 .footer-container {
@@ -190,7 +281,6 @@ input, button, textarea, select {
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    /* Creamos 3 columnas. La primera es más ancha (2fr) que las otras (1fr) */
     grid-template-columns: 2fr 1fr 1fr; 
     gap: 3rem;
     padding-bottom: 3rem;
@@ -199,26 +289,29 @@ input, button, textarea, select {
 /* Títulos y Logo */
 .footer-logo {
     font-size: 1.8rem;
-    color: var(--color-white);
+    color: #F1EFDF;
     margin-bottom: 1rem;
     letter-spacing: 1px;
+    font-weight: 800;
 }
+
 .footer-logo .highlight {
-    color: var(--color-accent); /* #4D648D */
+    color: #F1AE4E; /* Soft Orange */
 }
 
 .footer-desc {
     font-size: 0.95rem;
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1.6;
     max-width: 300px;
 }
 
 .footer-col h4 {
     font-size: 1.2rem;
-    color: var(--color-white);
+    color: #F1AE4E; /* Soft Orange */
     margin-bottom: 1.2rem;
     position: relative;
+    display: inline-block;
 }
 
 /* Decoración debajo de los títulos h4 */
@@ -226,31 +319,37 @@ input, button, textarea, select {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -8px;
     width: 40px;
     height: 3px;
-    background-color: var(--color-accent); /* #4D648D */
+    background-color: #4D648D; /* Royal Azure */
 }
 
-/* Enlaces del Footer */
+/* --- FIX: ELIMINAR PUNTOS DE LAS LISTAS --- */
 .footer-links {
-    list-style: none;
+    list-style: none; /* Quita los puntos */
+    padding: 0;       /* Quita el espacio lateral */
+    margin: 0;
 }
 
 .footer-links li {
     margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
 }
 
 .footer-links a {
-    color: var(--color-text-light);
+    color: #F1EFDF;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     font-size: 0.95rem;
+    opacity: 0.8;
 }
 
 .footer-links a:hover {
-    color: var(--color-white);
-    padding-left: 5px; /* Efecto sutil de movimiento */
+    color: #F1AE4E;
+    opacity: 1;
+    padding-left: 8px; /* Efecto de desplazamiento suave */
 }
 
 /* Redes Sociales */
@@ -258,6 +357,8 @@ input, button, textarea, select {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    list-style: none; /* Asegura que no tengan puntos si es un ul */
+    padding: 0;
 }
 
 .social-icon {
@@ -266,58 +367,56 @@ input, button, textarea, select {
     align-items: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    color: var(--color-text-light);
-    border-radius: 50%; /* Círculo perfecto */
+    background-color: rgba(77, 100, 141, 0.2); 
+    color: #F1EFDF;
+    border-radius: 50%; 
     text-decoration: none;
     font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background-color: var(--color-accent); /* #4D648D */
-    color: var(--color-white);
-    transform: translateY(-3px); /* Se eleva un poquito */
-}
-
-.footer-contact-info {
-    font-size: 0.9rem;
-    opacity: 0.9;
+    background-color: #F1AE4E; 
+    color: #283655;
+    transform: translateY(-3px);
 }
 
 /* Barra Inferior Copyright */
 .footer-bottom {
-    background-color: var(--color-bg-main); /* #1E1F26 (Vuelve al oscuro total) */
+    background-color: #1E273D; /* Un azul más profundo */
     text-align: center;
     padding: 1.5rem;
-    border-top: 1px solid rgba(255,255,255, 0.05);
+    border-top: 1px solid rgba(241, 239, 223, 0.1);
     font-size: 0.85rem;
+    color: #F1EFDF;
     opacity: 0.7;
 }
 
-/* --- RESPONSIVE FOOTER --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .footer-container {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
     }
     
     .footer-desc {
-        margin: 0 auto; /* Centrar texto descripción */
+        margin: 0 auto;
     }
 
     .footer-col h4::after {
-        /* Centrar la línea decorativa en móvil */
         left: 50%;
         transform: translateX(-50%);
     }
 
+    .footer-links li {
+        justify-content: center;
+    }
+
     .social-links {
-        justify-content: center; /* Centrar iconos */
+        justify-content: center;
     }
 }
-
 
 
 
@@ -349,7 +448,7 @@ input, button, textarea, select {
 }
 
 .hero-content h1 span {
-    color: var(--color-accent);
+    color: var(--color-highlight);
 }
 
 .hero-content p {
@@ -368,7 +467,7 @@ input, button, textarea, select {
 
 .btn-primary {
     padding: 0.9rem 1.6rem;
-    background-color: var(--color-accent);
+    background-color: var(--color-highlight);
     color: var(--color-white);
     border-radius: 6px;
     text-decoration: none;
@@ -526,31 +625,29 @@ input, button, textarea, select {
 }
 
 .why-us-card {
-    background-color: var(--color-secondary); /* Usa el Indigo Ink para las tarjetas */
+    background-color: var(--color-secondary); 
     padding: 30px;
     border-radius: 15px;
     /* Efecto de borde sutil */
-    border: 1px solid rgba(77, 100, 141, 0.3); /* Borde sutil basado en --color-accent */
+    border: 1px solid rgba(77, 100, 141, 0.3); 
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     text-align: center;
 }
 
 .why-us-card:hover {
-    transform: translateY(-8px); /* Se eleva más */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
-    border-color: var(--color-accent); /* Resalta el borde al pasar el mouse */
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    border-color: var(--color-accent);
 }
 
-/* Estilo para el contenedor del icono (el círculo) */
 .card-icon-wrapper {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 60px;
     height: 60px;
-    /* Usa un degradado sutil en el fondo del icono */
-    background: linear-gradient(45deg, var(--color-accent), #6d88b4);
+    background: linear-gradient(45deg, var(--color-bg-main), #283655);
     border-radius: 50%;
     margin: 0 auto 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
@@ -558,18 +655,18 @@ input, button, textarea, select {
 
 .why-us-card i {
     font-size: 2rem;
-    color: var(--color-white); /* Icono blanco */
+    color: var(--color-highlight); /* Icono blanco */
 }
 
 .why-us-card h3 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--color-white);
+    color: var(--color-text-dark);
 }
 
 .why-us-card p {
-    color: var(--color-text-light);
+    color: var(--color-text-dark);
     opacity: 0.85;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -622,7 +719,7 @@ input, button, textarea, select {
 
 .trust-features i {
     /* El ícono de check con el color de acento */
-    color: var(--color-accent); 
+    color: #F1AE4E; 
     font-size: 1.2rem;
     margin-right: 10px;
     margin-top: 2px;
@@ -689,8 +786,8 @@ input, button, textarea, select {
     padding: 12px 25px;
     /* CAMBIO CLAVE: Botón Primary-Ghost */
     background-color: transparent;
-    border: 2px solid var(--color-accent);
-    color: var(--color-accent); 
+    border: 2px solid var(--color-highlight);
+    color: var(--color-highlight); 
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
