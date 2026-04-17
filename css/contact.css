@@ -140,3 +140,29 @@
         font-size: 1.7rem;
     }
 }
+
+
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #555; /* O el color de texto que uses en tu diseño */
+}
+
+.checkbox-label a {
+    color: #007bff; /* Ajusta al color corporativo de Steamline */
+    text-decoration: underline;
+}
