@@ -35,8 +35,8 @@
     <section class="form-section reveal">
     <div class="form-container">
 
-        <h2 class="form-title">Join Our Team</h2>
-        <p class="form-subtitle">Apply now and become part of Steamline Group LLC</p>
+        <h2 class="form-title">Get a Free Consultation</h2>
+        <p class="form-subtitle">Let us handle your dealership's customer service — contact us today</p>
 
   <form id="contact-form" class="contact-form" action="https://formspree.io/f/xjgbbyde" method="POST">
     <div class="form-group">
@@ -53,29 +53,31 @@
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
     </div>
-
     <div class="form-group">
-        <label for="position">Position Applying For</label>
-        <select id="position" name="position" required>
-            <option value="" disabled selected>Select a position</option>
-            <option value="Call Center Agent">Call Center Agent</option>
-            <option value="Truck Driver">Truck Driver</option>
-        </select>
-    </div>
+    <label for="dealership">Dealership Name</label>
+    <input type="text" id="dealership" name="dealership_name" placeholder="Enter your dealership name" required>
+</div>
 
-    <div class="form-group">
-        <label for="message">Tell us about yourself</label>
-        <textarea id="message" name="message" rows="4" placeholder="Short introduction..."></textarea>
-    </div>
+<div class="form-group">
+    <label for="inventory">Number of Vehicles in Inventory</label>
+    <select id="inventory" name="inventory_size" required>
+        <option value="" disabled selected>Select inventory size</option>
+        <option value="1–50">1–50 vehicles</option>
+        <option value="51–150">51–150 vehicles</option>
+        <option value="150+">150+ vehicles</option>
+    </select>
+</div>
+   
 
-    <div class="form-group-checkbox">
-    <input type="checkbox" id="sms-consent" name="sms_consent" >
-   <label for="sms-consent" class="checkbox-label">
-        By providing your phone number, you agree to receive informational and marketing text messages from Steamline Group LLC for updates regarding your application. Message and data rates may apply. Message frequency varies. Reply STOP to opt-out. View our <a href="privacyPolicy.html">Privacy Policy</a> and <a href="termsOfServices.html">Terms of Service</a>.
+  
+<div class="form-group-checkbox">
+    <input type="checkbox" id="sms-consent" name="sms_consent" required>
+    <label for="sms-consent" class="checkbox-label">
+        By providing your phone number, you agree to receive text messages (SMS) from Steamline Group LLC including appointment reminders, service updates, and promotional offers. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for assistance. View our <a href="privacyPolicy.html">Privacy Policy</a> and <a href="termsOfServices.html">Terms of Service</a>.
     </label>
 </div>
 
-    <button type="submit" id="submit-btn" class="btn-submit">Submit Application</button>
+    <button type="submit" id="submit-btn" class="btn-submit">Request Free Consultation</button>
     
     <p id="form-status"></p>
 </form>
