@@ -1,4 +1,4 @@
- @keyframes fadeInUpCustom { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUpCustom { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         body { background-color: #283655; color: #F1EFDF; margin: 0; font-family: sans-serif; }
         .legal-page-content { padding: 160px 20px 80px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; }
         .legal-container { max-width: 900px; width: 100%; background-color: #F1EFDF; color: #283655; padding: 50px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border-top: 8px solid #F1AE4E; animation: fadeInUpCustom 0.8s ease-out forwards; }
