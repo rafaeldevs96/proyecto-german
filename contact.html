@@ -71,15 +71,30 @@
 
   
 <div class="form-group-checkbox">
-    <input type="checkbox" id="sms-consent" name="sms_consent" >
-    <label for="sms-consent" class="checkbox-label">
-        By providing your phone number, you agree to receive text messages (SMS) from Steamline Group LLC including appointment reminders, service updates, and promotional offers. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for assistance. View our <a href="privacyPolicy.html">Privacy Policy</a> and <a href="termsOfServices.html">Terms of Service</a>.
+    <input type="checkbox" id="sms-transactional" name="sms_consent_transactional">
+    <label for="sms-transactional" class="checkbox-label">
+        I consent to receive transactional messages from Steamline Group LLC (appointment reminders, service updates). Message frequency may vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out.
     </label>
 </div>
 
-    <button type="submit" id="submit-btn" class="btn-submit">Request Free Consultation</button>
-    
-    <p id="form-status"></p>
+<!-- Checkbox 2: Marketing -->
+<div class="form-group-checkbox">
+    <input type="checkbox" id="sms-marketing" name="sms_consent_marketing">
+    <label for="sms-marketing" class="checkbox-label">
+        I consent to receive marketing and promotional messages from Steamline Group LLC (offers, promotions, service announcements). Message frequency may vary. Msg & data rates may apply. Reply HELP for help or STOP to opt-out.
+    </label>
+</div>
+
+<!-- Botón de Envío -->
+<button type="submit" class="btn-submit">Submit Request</button>
+
+<!-- Enlaces Legales debajo del botón -->
+<div class="form-legal-footer" style="text-align: center; margin-top: 15px; font-size: 0.75rem; color: #283655; opacity: 0.8;">
+    By clicking submit, you agree to our 
+    <a href="termsOfServices.html" ">Terms & Conditions</a> 
+    and 
+    <a href="privacyPolicy.html" >Privacy Policy</a>.
+</div>
 </form>
 
     </div>
@@ -110,12 +125,18 @@
             </div>
 
             <div class="footer-col">
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
-                    <a href="#" class="social-icon" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
-                    <a href="#" class="social-icon" aria-label="Telegram"><i class="ri-telegram-fill"></i></a>
-                </div>
+                <!-- h4>Connect</h4>
+            <div class="social-links">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="ri-facebook-circle-fill"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="WhatsApp">
+                    <i class="ri-whatsapp-fill"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Telegram">
+                    <i class="ri-telegram-fill"></i>
+                </a>
+            </div> -->
                 <p class="footer-contact-info">
                     <i class="ri-mail-send-line"></i> info@steamlinegroup.com
                 </p>
